@@ -9,29 +9,34 @@ function App() {
   const user = JSON.parse(localStorage.getItem('user'));
   const token = localStorage.getItem('token');
 
+//   useEffect(() => {
+//   const handleUnloaded = () => {
+//     localStorage.removeItem('user');
+//     localStorage.removeItem('token');
+//   };
+
+//   window.addEventListener('beforeunload', handleUnloaded);
+
+//   return () => {
+//     window.removeEventListener('beforeunload', handleUnloaded);
+//   };
+// }, []);
+
   useEffect(() => {
-  const handleUnloaded = () => {
-    localStorage.removeItem('user');
     localStorage.removeItem('token');
-  };
-
-  window.addEventListener('beforeunload', handleUnloaded);
-
-  return () => {
-    window.removeEventListener('beforeunload', handleUnloaded);
-  };
-}, []);
+    localStorage.removeItem('user');
+  }, []);
 
   return (
     <>
       <div className="app">
         
           <Routes>
-            <Route
+            {/* <Route
               path="/"
               element={token ? <Home /> : <Navigate to="/login" />}
-            />
-            {/* <Route path="/" element={<Home />} /> */}
+            /> */}
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
