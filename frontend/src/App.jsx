@@ -9,18 +9,18 @@ function App() {
   const user = JSON.parse(localStorage.getItem('user'));
   const token = localStorage.getItem('token');
 
-//   useEffect(() => {
-//   const handleUnloaded = () => {
-//     localStorage.removeItem('user');
-//     localStorage.removeItem('token');
-//   };
+  useEffect(() => {
+  const handleUnloaded = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+  };
 
-//   window.addEventListener('beforeunload', handleUnloaded);
+  window.addEventListener('beforeunload', handleUnloaded);
 
-//   return () => {
-//     window.removeEventListener('beforeunload', handleUnloaded);
-//   };
-// }, []);
+  return () => {
+    window.removeEventListener('beforeunload', handleUnloaded);
+  };
+}, []);
 
   useEffect(() => {
     localStorage.removeItem('token');
@@ -34,7 +34,7 @@ function App() {
           <Routes>
             {/* <Route
               path="/"
-              element={token ? <Home /> : <Navigate to="/login" />}
+              element={token && user ? <Home /> : <Navigate to="/login" />}
             /> */}
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Login />} />

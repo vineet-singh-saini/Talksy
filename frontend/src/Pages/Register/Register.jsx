@@ -44,6 +44,8 @@ const Register = () => {
     }
     catch (err) {
       console.log(err);
+      alert ('Unable To Add-User At The Moment. Please Try Again Later..');
+      navigate('/register');
     }
   }
 

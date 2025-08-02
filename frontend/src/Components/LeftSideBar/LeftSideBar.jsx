@@ -17,7 +17,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
   const handleLogout = () => {
     localStorage.removeItem('token');
     // localStorage.removeItem('user');
-    navigate('/login');
+    navigate('/');
   };
 
   const sendConvoIds = async (user) => {

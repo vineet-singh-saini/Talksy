@@ -39,7 +39,7 @@ const RightSideBar = ({ selectedUser, setSelectedUser, isProfile, setIsProfile }
             <button onClick={()=> {
               localStorage.removeItem(token);
               // localStorage.removeItem(user);
-              navigate('/login');
+              navigate('/');
             }}>Log Out</button>
           </div>
         </div>
