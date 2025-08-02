@@ -29,7 +29,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={user && token ? <Home /> : <Navigate to="/login" />}
+              element={token ? <Home /> : <Navigate to="/login" />}
             />
             {/* <Route path="/" element={<Home />} /> */}
             <Route path="/login" element={<Login />} />
