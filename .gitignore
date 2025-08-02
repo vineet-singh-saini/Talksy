@@ -41,6 +41,4 @@ Thumbs.db
 *.njsproj
 *.sln
 
-# Optional: package lock files (only if using yarn or pnpm)
-# yarn.lock
-# pnpm-lock.yaml
+

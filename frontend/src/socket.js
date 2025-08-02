@@ -1,2 +1,9 @@
-import { io } from 'socket.io-client';
-export const socket = io('https://yummygo-backend-w3ho.onrender.com/');
+import { io } from 'socket.io-client'
+
+const socket = io('https://talksy-backend-9kxy.onrender.com', {
+  auth: {
+    token: localStorage.getItem('token')
+  }
+});
+
+export default socket;

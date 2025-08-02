@@ -1,0 +1,54 @@
+.chat-app-div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-app {
+    width: 90%;
+    height: 86%;
+    /* background: #000; */
+    backdrop-filter: blur(30px);
+    border-radius: 4rem;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-app-left {
+    height: 100%;
+    width: 25%;
+    /* background: #ffffff; */
+}
+
+.chat-app-left2 {
+    height: 100%;
+    width: 33%;
+    /* background: #ffffff; */
+}
+
+.chat-app-chat {
+    height: 100%;
+    width: 73%;
+    /* background: #a200ff; */
+    
+}
+
+.chat-app-chat2 {
+    height: 100%;
+    width: 67%;
+    /* background: #a200ff; */
+}
+
+.hide {
+    display: none;
+}
+
+.chat-app-right {
+    height: 100%;
+    width: 30%;
+    /* background: #00ffb7; */
+}
