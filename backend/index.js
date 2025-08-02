@@ -18,7 +18,7 @@ app.use(express.json());
 const server = http.createServer(app);
 const io = new Server(server, {
     cors : {
-        origin: 'https://talksy-ten.vercel.app , http://localhost:5173',
+        origin: 'https://talksy-ten.vercel.app',
         methods : ['GET', 'POST']
     },
 });
