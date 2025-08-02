@@ -21,6 +21,7 @@ const Login = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setLogging(true);
     try {
       const res = await API.post('/login', loginFormData);
       console.log(res.data);
@@ -29,8 +30,8 @@ const Login = () => {
       
       setTimeout(() => {
         navigate('/');
-        setLogging(true);
-      },1000);
+        
+      },7000);
     }
     catch (err) {
       setLogging(false);

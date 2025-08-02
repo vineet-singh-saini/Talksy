@@ -14,11 +14,11 @@ const Home = () => {
   
 
 
-  useEffect(() => {
-    if (!isAuth()) {
-      navigate('/login');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (!isAuth()) {
+  //     navigate('/login');
+  //   }
+  // }, []);
 
   ;
 

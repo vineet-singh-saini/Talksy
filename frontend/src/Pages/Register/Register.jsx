@@ -11,6 +11,7 @@ const Register = () => {
 
   const navigate = useNavigate();
   const [avatarDivState, setAvatarPicState] = useState(false);
+  const [logging , setLogging] = useState(false);
   const [userAvatar, setUserAvatar] = useState('');
 
   const [formData, setFormData] = useState({
@@ -30,6 +31,7 @@ const Register = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    setLogging(true);
     try {
       const res = await API.post('/register', formData);
       localStorage.setItem('token', res.data.token);
@@ -37,7 +39,7 @@ const Register = () => {
       setTimeout(() => {
         navigate('/');
         
-      }, 100);
+      }, 5000);
 
     }
     catch (err) {
@@ -47,6 +49,9 @@ const Register = () => {
 
 
   return (
+    logging === true ? <div className="loading"><p>Loading</p></div>
+      : 
+    (
     <div className='register-div'>
       <div className="register">
         <div className="register-left">
@@ -100,7 +105,7 @@ const Register = () => {
         </div>
       )}
     </div>
-  )
+  ))
 }
 
 export default Register
