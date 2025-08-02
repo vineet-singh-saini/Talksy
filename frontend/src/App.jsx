@@ -22,10 +22,10 @@ function App() {
   };
 }, []);
 
-  useEffect(() => {
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('user');
-  }, []);
+  // useEffect(() => {
+  //   sessionStorage.removeItem('token');
+  //   sessionStorage.removeItem('user');
+  // }, []);
 
   return (
     <>
