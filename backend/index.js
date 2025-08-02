@@ -1,11 +1,26 @@
 const express = require ('express');
 const app = express();
+<<<<<<< HEAD
 require("dotenv").config();
 const port = process.env.PORT
 const {Server} = require ('socket.io');
 const http = require ('http');
 const cors = require ('cors');
 const path = require ('path');
+=======
+
+const mongoose = require('mongoose');
+const http = require ('http');
+const cors = require ('cors');
+const {Server} = require ('socket.io');
+require('dotenv').config();
+const port = process.env.PORT;
+const Message = require('./models/message')
+const authRoutes = require('./Routes/auth');
+const allUsers =  require('./Routes/alllUsers');
+const Conversations = require ('./Routes/Conversation');
+const ConvoMessages = require ('./Routes/message');
+>>>>>>> c54434e (Variable Updates)
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
