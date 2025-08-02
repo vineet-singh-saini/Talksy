@@ -3,6 +3,7 @@ import Home from './Pages/Home/Home'
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
 import { BrowserRouter as Router, Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function App() {
   const user = JSON.parse(localStorage.getItem('user'));
