@@ -2,22 +2,22 @@ import { Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home/Home'
 import Login from './Pages/Login/Login'
 import Register from './Pages/Register/Register'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate } from 'react-router-dom';
 
 function App() {
   const user = JSON.parse(localStorage.getItem('user'));
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-  const handleUnload = () => {
+  const handleUnloaded = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
   };
 
-  window.addEventListener('beforeunload', handleUnload);
+  window.addEventListener('beforeunload', handleUnloaded);
 
   return () => {
-    window.removeEventListener('beforeunload', handleUnload);
+    window.removeEventListener('beforeunload', handleUnloaded);
   };
 }, []);
 
