@@ -23,7 +23,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
   const sendConvoIds = async (user) => {
     setSelectedUser(user);
     setReceiverId(user._id);
-    console.log('convo func is triggered');
+    // console.log('convo func is triggered');
     const convoData = {
       senderId: currentUser.id,
       receiverId: user?._id
@@ -33,11 +33,11 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
     try {
       const response = await axios.post('https://talksy-backend-9kxy.onrender.com/allconvos/conversations', convoData, {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer${token}`
         }
       });
       const convoRoomIds = response.data;
-      console.log(convoRoomIds);
+      // console.log(convoRoomIds);
     } catch (err) {
       console.log(err);
     }
@@ -46,22 +46,24 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
   useEffect(() => {
   const fetchRecentChats = async () => {
     const token = sessionStorage.getItem('token');
+    // console.log (token);
     // console.log (userId);
     try {
       const convoRes = await axios.get(`https://talksy-backend-9kxy.onrender.com/allconvos/conversations/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer${token}` }
       });
 
       const conversationList = convoRes.data;
+      // console.log(conversationList);
 
       const usersData = await Promise.all(
         conversationList.map(async (convo) => {
           // find the other participant
           const receiverId = convo.participants.find(id => id !== userId);
-          console.log (receiverId);
+          // console.log (receiverId);
           // fetch that user's details
           const userRes = await axios.get(`https://talksy-backend-9kxy.onrender.com/allusers/receiver/${receiverId}`);
-          console.log(userRes);
+          // console.log(userRes.data);
           return userRes.data;
           
         })
@@ -74,7 +76,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
   };
 
   fetchRecentChats();
-}, [userId]);
+}, [userId,allContactsList]);
 
 
   useEffect(() => {
