@@ -29,7 +29,7 @@ const Login = () => {
       localStorage.setItem('user', JSON.stringify(res.data.user));
       
       setTimeout(() => {
-        navigate('/');
+        navigate('/home');
         
       },6000);
     }
