@@ -8,8 +8,9 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
 
   const navigate = useNavigate();
+  const [logging , setLogging] = useState(false);
   const [loginFormData, setLoginFormData] = useState({
-    username: '',
+    
     email: '',
     password: '',
   });
@@ -25,19 +26,23 @@ const Login = () => {
       console.log(res.data);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
-      // console.log(res.data.user);
+      
       setTimeout(() => {
         navigate('/');
-        
-      }, 200);
+        setLogging(true);
+      },1000);
     }
     catch (err) {
+      setLogging(false);
       console.log(err);
     }
   }
 
 
   return (
+    logging === true ? <div className="loading"><p>Loading</p></div>
+      : 
+    (
     <div className='login-div'>
       <div className="login">
         <div className="login-left">
@@ -57,6 +62,7 @@ const Login = () => {
       </div>
     </div>
   )
+)
 }
 
 export default Login
