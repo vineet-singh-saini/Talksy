@@ -19,7 +19,7 @@ const RightSideBar = ({ selectedUser, setSelectedUser, isProfile, setIsProfile }
           </div>
 
           <div className="user-profile-pic-div">
-            <img src={currentUser.avatar} alt="avatar-img" />
+            <img src={currentUser?.avatar || 'https://t4.ftcdn.net/jpg/01/24/65/69/240_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg'} alt="avatar-img" />
             <p>{currentUser.username}</p>
           </div>
           <div className="user-profile-info-div">

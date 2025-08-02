@@ -129,7 +129,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
                   recentChats.map((user, index) => (
                     <div key={index} className="left-chat-user" onClick={() => sendConvoIds(user)}>
                       <div className="left-chat-user-avatar">
-                        <img src={user.avatar} alt="User Avatar" className="left-chat-user-avatar-img" />
+                        <img src={user?.avatar || 'https://t4.ftcdn.net/jpg/01/24/65/69/240_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg'} alt="User Avatar" className="left-chat-user-avatar-img" />
                       </div>
                       <div className="left-chat-user-info">
                         <div className="left-chat-user-names">
@@ -164,7 +164,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
 
                       <div key={index} className="all-contacts-list-user" onClick={() => sendConvoIds(user)}>
                         <div className="all-contacts-user-img-div">
-                          <img src={user.avatar} alt="avatar" />
+                          <img src={user?.avatar || 'https://t4.ftcdn.net/jpg/01/24/65/69/240_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg'}  alt="avatar" />
 
                         </div>
                         <div className="all-contacts-list-user-name">

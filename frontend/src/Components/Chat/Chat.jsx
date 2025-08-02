@@ -120,7 +120,7 @@ const Chat = ({ selectedUser, setSelectedUser }) => {
 
               <div className="chat-header">
                 <div className="chat-header-left">
-                  <img src={selectedUser.avatar} alt="avatar" />
+                  <img src={selectedUser?.avatar || 'https://t4.ftcdn.net/jpg/01/24/65/69/240_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg'}   alt="avatar" />
                   <div className="chat-header-left-name">
                     <p className='chat-header-left-username'>{selectedUser.username}</p>
                     <p className={selectedUser.status === '🌙 Idle' ? 'chat-selected-user-status green' : 'chat-selected-user-status grey'}>{selectedUser.status}</p>
