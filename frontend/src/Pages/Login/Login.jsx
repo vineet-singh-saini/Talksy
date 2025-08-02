@@ -31,7 +31,7 @@ const Login = () => {
       setTimeout(() => {
         navigate('/');
         
-      },20000);
+      },6000);
     }
     catch (err) {
       setLogging(false);

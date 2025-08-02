@@ -37,9 +37,9 @@ const Register = () => {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       setTimeout(() => {
-        navigate('/');
+        navigate('/login');
         
-      }, 5000);
+      }, 3000);
 
     }
     catch (err) {
