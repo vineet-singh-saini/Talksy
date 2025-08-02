@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className="app">
-        <Router>
+        
           <Routes>
             <Route
               path="/"
@@ -34,7 +34,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
-        </Router>
+        
       </div>
     </>
   )
