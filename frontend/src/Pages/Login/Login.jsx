@@ -25,8 +25,8 @@ const Login = () => {
     try {
       const res = await API.post('/login', loginFormData);
       console.log(res.data);
-      localStorage.setItem('token', res.data.token);
-      localStorage.setItem('user', JSON.stringify(res.data.user));
+      sessionStorage.setItem('token', res.data.token);
+      sessionStorage.setItem('user', JSON.stringify(res.data.user));
       
       setTimeout(() => {
         navigate('/home');

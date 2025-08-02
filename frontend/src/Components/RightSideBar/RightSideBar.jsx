@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 const RightSideBar = ({ selectedUser, setSelectedUser, isProfile, setIsProfile }) => {
   const navigate = useNavigate();
-  const currentUser = JSON.parse(localStorage.getItem('user'));
+  const currentUser = JSON.parse(sessionStorage.getItem('user'));
   console.log (currentUser);
 
   return (
@@ -37,8 +37,8 @@ const RightSideBar = ({ selectedUser, setSelectedUser, isProfile, setIsProfile }
             </div>
             
             <button onClick={()=> {
-              localStorage.removeItem(token);
-              // localStorage.removeItem(user);
+              sessionStorage.removeItem(token);
+              // sessionStorage.removeItem(user);
               navigate('/');
             }}>Log Out</button>
           </div>

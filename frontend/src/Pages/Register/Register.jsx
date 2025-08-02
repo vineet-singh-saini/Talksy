@@ -34,8 +34,8 @@ const Register = () => {
     setLogging(true);
     try {
       const res = await API.post('/register', formData);
-      localStorage.setItem('token', res.data.token);
-      localStorage.setItem('user', JSON.stringify(res.data.user));
+      sessionStorage.setItem('token', res.data.token);
+      sessionStorage.setItem('user', JSON.stringify(res.data.user));
       setTimeout(() => {
         navigate('/login');
         

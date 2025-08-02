@@ -12,7 +12,7 @@ const Chat = ({ selectedUser, setSelectedUser }) => {
   const [allMessageData, setAllMessageData] = useState([]);
   const [newMessageData, setNewMessageData] = useState([]);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const currentUser = JSON.parse(localStorage.getItem('user'));
+  const currentUser = JSON.parse(sessionStorage.getItem('user'));
   const [chatId, setChatId] = useState();
   const messagesEndRef = useRef(null);
   const currentUserId = currentUser.id;
@@ -23,7 +23,7 @@ const Chat = ({ selectedUser, setSelectedUser }) => {
 
       if (!selectedUser) return;
       
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       try {
         const res = await axios.post('https://talksy-backend-9kxy.onrender.com/allconvos/get-chat-id', {
           senderId: currentUserId,
@@ -70,7 +70,7 @@ const Chat = ({ selectedUser, setSelectedUser }) => {
   const sendNewMessage = async () => {
 
     // posting new msg to backend setup
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     const msgData = {
       chatId: chatId,
       senderId: currentUserId,

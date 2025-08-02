@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 
 const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }) => {
   const navigate = useNavigate();
-  const currentUser = JSON.parse(localStorage.getItem('user'));
+  const currentUser = JSON.parse(sessionStorage.getItem('user'));
   const userId = currentUser.id;
   console.log (currentUser.id)
   const [recentChats, setRecentChats] = useState([]);
@@ -15,8 +15,8 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
   const [receiverId, setReceiverId] = useState(selectedUser._id);
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    // localStorage.removeItem('user');
+    sessionStorage.removeItem('token');
+    // sessionStorage.removeItem('user');
     navigate('/');
   };
 
@@ -29,7 +29,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
       receiverId: user?._id
     };
 
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     try {
       const response = await axios.post('https://talksy-backend-9kxy.onrender.com/allconvos/conversations', convoData, {
         headers: {
@@ -45,7 +45,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
 
   useEffect(() => {
   const fetchRecentChats = async () => {
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     // console.log (userId);
     try {
       const convoRes = await axios.get(`https://talksy-backend-9kxy.onrender.com/allconvos/conversations/${userId}`, {
@@ -79,7 +79,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
 
   useEffect(() => {
     const allContacts = async () => {
-      const token = localStorage.getItem('token');
+      const token = sessionStorage.getItem('token');
       try {
         const res = await axios.get('https://talksy-backend-9kxy.onrender.com/allusers/allcontacts', {
           headers: {
