@@ -4,13 +4,13 @@ import axios from 'axios'
 import API from '../../Services/api'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import { Circles } from 'react-loader-spinner'
 const Login = () => {
 
   const navigate = useNavigate();
-  const [logging , setLogging] = useState(false);
+  const [logging, setLogging] = useState(false);
   const [loginFormData, setLoginFormData] = useState({
-    
+
     email: '',
     password: '',
   });
@@ -27,11 +27,11 @@ const Login = () => {
       console.log(res.data);
       sessionStorage.setItem('token', res.data.token);
       sessionStorage.setItem('user', JSON.stringify(res.data.user));
-      
+
       setTimeout(() => {
         navigate('/home');
-        
-      },6000);
+
+      }, 6000);
     }
     catch (err) {
       setLogging(false);
@@ -43,29 +43,34 @@ const Login = () => {
 
 
   return (
-    logging === true ? <div className="loading"><p>Loading</p></div>
-      : 
-    (
-    <div className='login-div'>
-      <div className="login">
-        <div className="login-left">
-           <p className='login-left-txt'> Login </p>
-        </div>
-       <div className="login-right">
-          <form onSubmit={submitHandler}>
-          <input type="text" placeholder="Email" name='email' onChange={inputHandler} />
-          <input type="password" placeholder="Password" name='password' onChange={inputHandler} />
-          <button type="submit">Login</button>
-          <div className="not-registered">
-            <p>Not Registered? <a href="/register">Register Here</a></p>
+    logging === true ? <div className="loading"><Circles
+      height="100"
+      width="100"
+      color="white"
+      ariaLabel="circles-loading"
+    /></div>
+      :
+      (
+        <div className='login-div'>
+          <div className="login">
+            <div className="login-left">
+              <p className='login-left-txt'> Login </p>
+            </div>
+            <div className="login-right">
+              <form onSubmit={submitHandler}>
+                <input type="text" placeholder="Email" name='email' onChange={inputHandler} />
+                <input type="password" placeholder="Password" name='password' onChange={inputHandler} />
+                <button type="submit">Login</button>
+                <div className="not-registered">
+                  <p>Not Registered? <a href="/register">Register Here</a></p>
+                </div>
+              </form>
+            </div>
+
           </div>
-        </form>
-       </div>
-        
-      </div>
-    </div>
+        </div>
+      )
   )
-)
 }
 
 export default Login

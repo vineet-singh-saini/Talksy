@@ -25,6 +25,15 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    font-family: "Bitcount Prop Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
 }
 .chat-header-left{ 
     display: flex;
@@ -95,6 +104,15 @@
      display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Bitcount Prop Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
 }
 
 .chat-send {
@@ -120,6 +138,15 @@
 
 .chat-send input::placeholder {
     color: white;
+    font-family: "Bitcount Prop Single", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
 }
 
 .chat-send span {
@@ -192,4 +219,48 @@
     border-radius: 2rem;
     padding: 1rem;
     margin: 0.5rem 0;
+}
+
+.no-user-chat-div {
+    height: 90%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.no-user-chat-div p {
+    font-size: 2rem;
+    color: white;
+}
+
+@media (max-width : 450px) {
+    .chat-header {
+        padding: 0.3rem;
+        width: 85%;
+    }
+    .chat-header-left{
+        width: 50%;
+        justify-content: start;
+    }
+    .chat-header-left img {
+        width: 2.7rem;
+    }
+    .chat-header-left p {
+        font-size: 1.1rem;
+    }
+    .chat-header-right {
+        font-size: 1.15rem;
+        width: 50%;
+        justify-content: end;
+        gap: 0.6rem;
+    }
+
+    .chat-chatbox p {
+        font-size: 1.1rem;
+    }
+
+    .chat-send-div {
+        width: 100%;
+    }
 }

@@ -107,7 +107,7 @@ const LeftSideBar = ({ selectedUser, setSelectedUser ,isProfile , setIsProfile }
           <div className="left-top-menu-container">
             <span><i class="fa-solid fa-ellipsis-vertical"></i></span>
             <div className="left-top-menu-container-menu-list">
-              <p className='menu-list-txt1' onClick={() => setIsProfile(true)}>Profile</p>
+              <p className='menu-list-txt1' onClick={() => {setIsProfile(true)} }>Profile</p>
               <hr className='menu-list-hrline' />
               <p className='menu-list-txt2' onClick={() => handleLogout()}>Log Out</p>
             </div>

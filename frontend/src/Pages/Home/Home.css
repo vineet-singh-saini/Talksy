@@ -52,3 +52,26 @@
     width: 30%;
     /* background: #00ffb7; */
 }
+
+@media (max-width : 600px) {
+    .chat-app-left{
+        display: none;
+    }
+    .chat-app-chat {
+        width: 100%;
+    }
+    .chat-app-chat2 {
+        display: none;
+    }
+    .chat-app-left2 {
+        width: 100%;
+    
+    }
+    .chat-app-right {
+        position: absolute;
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        border-radius: 2rem;
+        /* color: black; */
+    }
+}

@@ -6,12 +6,13 @@ import Chat from '../../Components/Chat/Chat'
 import RightSideBar from '../../Components/RightSideBar/RightSideBar'
 import { isAuth } from '../../utils/checkAuth'
 
+
 const Home = () => {
   const navigate = useNavigate();
 
   const [selectedUser , setSelectedUser] = useState(false);
   const [isProfile , setIsProfile] = useState(false);
-  
+  const [chatBack , setChatBack] = useState(false);
 
 
   useEffect(() => {
@@ -28,11 +29,11 @@ const Home = () => {
 
       <div className="chat-app">
         
-        <div className= { selectedUser ? 'chat-app-left' : 'chat-app-left2'} >
+        <div className= { selectedUser  ? 'chat-app-left' : 'chat-app-left2'} >
           <LeftSideBar selectedUser = {selectedUser}  setSelectedUser = {setSelectedUser} isProfile = {isProfile}  setIsProfile={setIsProfile} />
         </div>
-        <div className={ selectedUser ? 'chat-app-chat' : 'chat-app-chat2'}>
-          <Chat selectedUser = {selectedUser}  setSelectedUser = {setSelectedUser}  />
+        <div className={ selectedUser && chatBack === false ? 'chat-app-chat' : 'chat-app-chat2'}>
+          <Chat selectedUser = {selectedUser}  setSelectedUser = {setSelectedUser}   />
         </div>
         <div className={ isProfile ? 'chat-app-right' : 'chat-app-right hide'}>
           <RightSideBar selectedUser = {selectedUser}  setSelectedUser = {setSelectedUser}  isProfile = {isProfile}  setIsProfile={setIsProfile}  />

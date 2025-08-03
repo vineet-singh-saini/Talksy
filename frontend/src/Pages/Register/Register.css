@@ -208,3 +208,46 @@
     
     aspect-ratio: 1/1;
 }
+
+
+@media (max-width : 600px) {
+    .register {
+        border-radius: 1rem;
+        width: 80%;
+        height: 70%;
+        flex-direction: column;
+    }
+
+    .register-left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10%;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .register-right {
+        height: 90%;
+        width: 99%;
+        
+        padding: 0.2rem;
+    }
+
+    .register-right form {
+        border-radius: 1rem;
+        gap: 1rem;
+    }
+    .register-right form input,.register-right form select, .avatar-picker-div  {
+        font-size: 0.8rem;
+        width: 83%;
+        height: 2.3rem;
+    }
+    .avatar-picker-div p{
+        font-size: 0.77rem;
+    }
+    .register-right form button {
+        width: 80%;
+        height: 3rem;
+    }
+}

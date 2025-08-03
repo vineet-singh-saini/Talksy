@@ -4,9 +4,9 @@ import EmojiPicker from 'emoji-picker-react'
 import socket from '../../socket'
 import axios from 'axios'
 import { io } from 'socket.io-client'
+import { Circles } from 'react-loader-spinner'
 
-
-const Chat = ({ selectedUser, setSelectedUser }) => {
+const Chat = ({ selectedUser, setSelectedUser,setChatBack }) => {
 
   const [chatMessages, setChatMessages] = useState('');
   const [allMessageData, setAllMessageData] = useState([]);
@@ -120,6 +120,7 @@ const Chat = ({ selectedUser, setSelectedUser }) => {
 
               <div className="chat-header">
                 <div className="chat-header-left">
+                  <i class="fa-solid fa-arrow-left" onClick={()=> {setSelectedUser(false)}}></i>
                   <img src={selectedUser?.avatar || 'https://t4.ftcdn.net/jpg/01/24/65/69/240_F_124656969_x3y8YVzvrqFZyv3YLWNo6PJaC88SYxqM.jpg'}   alt="avatar" />
                   <div className="chat-header-left-name">
                     <p className='chat-header-left-username'>{selectedUser.username}</p>
@@ -181,8 +182,14 @@ const Chat = ({ selectedUser, setSelectedUser }) => {
             </div>
           </div>
         ) :
-          <div>
-            <p>No user selected</p>
+          <div className='no-user-chat-div'>
+            {/* <Circles
+                  height="100"
+                  width="100"
+                  color="white"
+                  ariaLabel="circles-loading"
+                /> */}
+            <p >No user selected</p>
           </div>
       }
 
