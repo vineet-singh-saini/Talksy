@@ -4,7 +4,6 @@ import EmojiPicker from 'emoji-picker-react'
 import socket from '../../socket'
 import axios from 'axios'
 import { io } from 'socket.io-client'
-import { Circles } from 'react-loader-spinner'
 
 const Chat = ({ selectedUser, setSelectedUser,setChatBack }) => {
 
@@ -183,12 +182,6 @@ const Chat = ({ selectedUser, setSelectedUser,setChatBack }) => {
           </div>
         ) :
           <div className='no-user-chat-div'>
-            {/* <Circles
-                  height="100"
-                  width="100"
-                  color="white"
-                  ariaLabel="circles-loading"
-                /> */}
             <p >No user selected</p>
           </div>
       }

@@ -4,7 +4,7 @@ import axios from 'axios'
 import API from '../../Services/api'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Circles } from 'react-loader-spinner'
+
 const Login = () => {
 
   const navigate = useNavigate();
@@ -43,12 +43,7 @@ const Login = () => {
 
 
   return (
-    logging === true ? <div className="loading"><Circles
-      height="100"
-      width="100"
-      color="white"
-      ariaLabel="circles-loading"
-    /></div>
+    logging === true ? <div className="loading-login"> <p>LOADING</p></div>
       :
       (
         <div className='login-div'>

@@ -112,7 +112,15 @@
     color: rgb(191, 0, 249);
 }
 
-.loading {
+.loading-login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loading-login p {
+    font-size: 5rem;
     font-family: "Bitcount Prop Single", system-ui;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -122,13 +130,20 @@
     "CRSV" 0.5,
     "ELSH" 0,
     "ELXP" 0;
-    width: 100%;
-    height: 100vh;
     color: white;
-    font-size: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    animation: loading 1s infinite ease-in-out ;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width : 450px) {

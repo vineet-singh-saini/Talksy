@@ -5,7 +5,7 @@ import { useState } from 'react'
 import API from '../../Services/api'
 import { useNavigate } from 'react-router-dom'
 import { avatarPics } from '../../assets/assets'
-import { Circles } from 'react-loader-spinner';
+
 const Register = () => {
 
 
@@ -51,12 +51,9 @@ const Register = () => {
 
 
   return (
-    logging === true ? <div className="loading"><Circles
-            height="80"
-            width="80"
-            color="blue"
-            ariaLabel="circles-loading"
-          /></div>
+    logging === true ? <div className="loading">
+      <p>LOADING</p>
+    </div>
       : 
     (
     <div className='register-div'>
